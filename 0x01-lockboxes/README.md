@@ -1,4 +1,4 @@
-# ALX interview prep questions
+# ALX interview-prep questions
 
 ## 0x00-pascal_triangle
 
