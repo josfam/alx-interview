@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """Finds the minimum number of operations needed to achieve a given number
 of characters using only “Copy All” and “Paste” operations"""
