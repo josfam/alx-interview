@@ -21,6 +21,9 @@ def minOperations(n: int) -> int:
     """Calculates and returns the minimum number of operations to achieve a
     given number of characters using only “Copy All” and “Paste” operations
     """
+    if (n < 1):
+        return 0
+
     minOperations = 0
     curr_num = 2
     root_n = int(n ** 0.5)
