@@ -1,5 +1,6 @@
 # test files
 *-main.py
+0-generator.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
