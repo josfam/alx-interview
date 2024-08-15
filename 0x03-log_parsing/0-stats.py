@@ -49,4 +49,3 @@ try:
                 pass
 except KeyboardInterrupt as e:
     print_summary()
-    print(e)
