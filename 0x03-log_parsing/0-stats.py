@@ -43,10 +43,11 @@ try:
         match = re.match(pattern, line)
         if match:
             total_file_size += int(match.group('file_size'))
-            # count up the status codes
             try:
-                status_counts[int(match.group('status_code'))] += 1
-            except (ValueError, TypeError, KeyError):
-                pass
+                status_code = int(match.group('status_code'))
+            except (ValueError, TypeError):
+                continue
+            if status_code in status_counts:
+                status_counts[status_code] += 1
 except KeyboardInterrupt as e:
     print_summary()
