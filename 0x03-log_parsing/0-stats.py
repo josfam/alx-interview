@@ -5,7 +5,7 @@
 import sys
 import re
 
-ip = r'(?P<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
+ip = r'(?P<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})?'
 date = r'\[(?P<date>\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{1,2}\.\d{1,6})\]'
 get = r'"GET \/projects\/260 HTTP\/1.1"'
 status_code = r'(?P<status_code>\d{3})?'
@@ -40,7 +40,7 @@ try:
     for count, line in enumerate(sys.stdin):
         if count > 0 and count % 10 == 0:
             print_summary()
-        match = re.match(pattern, line)
+        match = re.search(pattern, line)
         if match:
             total_file_size += int(match.group('file_size'))
             try:
