@@ -51,3 +51,5 @@ try:
                 status_counts[status_code] += 1
 except KeyboardInterrupt as e:
     print_summary()
+
+print_summary()
