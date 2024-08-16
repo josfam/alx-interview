@@ -11,7 +11,7 @@ get = r'"GET \/projects\/260 HTTP\/1.1"'
 status_code = r'(?P<status_code>\d{3})?'
 file = r'(?P<file_size>\d{1,4})'
 
-pattern = f"{ip} - {date} {get} {status_code} {file}"
+pattern = f"{ip} ?- ?{date} {get} {status_code} {file}"
 
 total_file_size = 0
 status_counts = {
