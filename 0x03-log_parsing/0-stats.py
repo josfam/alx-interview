@@ -32,7 +32,8 @@ def print_summary() -> None:
     """
     print(f'File size: {total_file_size}')
     for status_code, count in status_counts.items():
-        print(f'{status_code}: {count}')
+        if count > 0:
+            print(f'{status_code}: {count}')
 
 
 try:
