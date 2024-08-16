@@ -5,13 +5,13 @@
 import sys
 import re
 
-ip_part = r'(?P<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
-date_part = r'\[(?P<date>\d{4}-\d{2}-\d{2}) .*\]'
-get_part = r'"GET \/projects\/260 HTTP\/1.1"'
-code = r'(?P<status_code>\d{3})?'
+ip = r'(?P<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
+date = r'\[(?P<date>\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}:\d{1,2}\.\d{1,6})\]'
+get = r'"GET \/projects\/260 HTTP\/1.1"'
+status_code = r'(?P<status_code>\d{3})?'
 file = r'(?P<file_size>\d{1,4})'
 
-pattern = f"{ip_part} - {date_part} {get_part} {code} {file}"
+pattern = f"{ip} - {date} {get} {status_code} {file}"
 
 total_file_size = 0
 status_counts = {
