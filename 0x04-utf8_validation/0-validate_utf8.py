@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """Contains function that determines whether the provided data represents
 valid UTF-8 encoding"""
