@@ -10,7 +10,7 @@ def validUTF8(data):
     MAX_CONT_BYTES = 6
     padded = [str(bin(num)).lstrip('0b')[-MAX_BITS:].zfill(8) for num in data]
 
-    cont_bytes_expected = 0
+    cont_bytes_after = 0
     cont_bytes_got = 0
     i = 0
 
@@ -22,11 +22,13 @@ def validUTF8(data):
         if num.startswith('0'):  # normal ASCII letter
             pass
         elif num.startswith('11'):  # multibyte
-            cont_bytes_expected = num.find('0')
-            if cont_bytes_expected > MAX_CONT_BYTES:
+            cont_bytes_after = num.find('0') - 1
+            if cont_bytes_after > MAX_CONT_BYTES:
                 return False
             # check expected continuation bytes
-            cont_bytes = padded[i + 1: i + cont_bytes_expected + 1]
+            cont_bytes = padded[i + 1: i + cont_bytes_after + 1]
+            if not cont_bytes: # no more bytes exist
+                return False
             i += 1
             for cont_byte in cont_bytes:
                 if not cont_byte.startswith('10'):  # illegal continuation
