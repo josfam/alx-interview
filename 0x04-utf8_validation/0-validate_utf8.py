@@ -23,6 +23,8 @@ def validUTF8(data):
             pass
         elif num.startswith('11'):  # multibyte
             cont_bytes_expected = num.find('0')
+            if cont_bytes_expected > 6: # max possible
+                return False
             # look at the next cont_bytes_expected numbers
             cont_bytes = padded[i + 1: i + cont_bytes_expected + 1]
             i += 1
