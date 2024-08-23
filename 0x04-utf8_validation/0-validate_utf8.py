@@ -17,8 +17,6 @@ def validUTF8(data):
     while i < len(padded):
         num = padded[i]
 
-        if len(num) > MAX_BITS:
-            return False
         if num.startswith('0'):  # normal ASCII letter
             pass
         elif num.startswith('11'):  # multibyte
