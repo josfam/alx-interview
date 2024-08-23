@@ -8,7 +8,10 @@ def validUTF8(data):
     """Determines whether the provided data represents UTF-8 encoding"""
     MAX_BITS = 8
     MAX_CONT_BYTES = 6
-    padded = [str(bin(num)).lstrip('0b')[-MAX_BITS:].zfill(8) for num in data]
+    padded = [
+        str(bin(num)).lstrip('0b')[-MAX_BITS:].zfill(MAX_BITS)
+        for num in data
+    ]
 
     cont_bytes_after = 0
     cont_bytes_got = 0
