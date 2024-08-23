@@ -24,7 +24,7 @@ def validUTF8(data):
         elif num.startswith('11'):  # multibyte
             cont_bytes_expected = num.find('0')
             # look at the next cont_bytes_expected numbers
-            cont_bytes = padded[i + 1 : i + cont_bytes_expected + 1]
+            cont_bytes = padded[i + 1: i + cont_bytes_expected + 1]
             i += 1
             for cont_byte in cont_bytes:
                 if not cont_byte.startswith('10'):  # illegal continuation
