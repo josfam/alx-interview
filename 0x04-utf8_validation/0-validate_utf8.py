@@ -25,9 +25,9 @@ def validUTF8(data):
                 return False
             # check expected continuation bytes
             cont_bytes = padded[i + 1: i + cont_bytes_after + 1]
-            if not cont_bytes: # no more bytes exist
+            if not cont_bytes:  # no more bytes exist
                 return False
-            i += 1 # move to the first continuation byte
+            i += 1  # move to the first continuation byte
             for cont_byte in cont_bytes:
                 if not cont_byte.startswith('10'):  # illegal continuation
                     return False
