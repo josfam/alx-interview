@@ -7,6 +7,8 @@ node_modules/
 lines.txt
 *-test.py
 *-test.txt
+films-with-id.json
+just-films.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
