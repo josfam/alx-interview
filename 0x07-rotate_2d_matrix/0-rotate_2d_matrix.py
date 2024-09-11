@@ -2,15 +2,12 @@
 
 """Rotates a 2D n x n matrix in-place, by 90 degrees clockwise"""
 
-from copy import deepcopy
-
-
 def rotate_2d_matrix(matrix):
     """Rotates an n x n 2D matrix in-place, by 90 degrees clockwise.
     For this, it is assumed that the matrix will have 2 dimensions, and is not
     empty.
     """
-    matrix_copy = deepcopy(matrix)
+    matrix_copy = [row[:] for row in matrix]
 
     n = len(matrix)
     row_to_replace = 0
