@@ -3,6 +3,7 @@ node_modules/
 
 # test files
 *-main.py
+main_*.py
 0-generator.py
 lines.txt
 *-test.py
