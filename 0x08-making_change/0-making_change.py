@@ -16,12 +16,14 @@ def makeChange(coins, total):
     Returns:
         The fewest number of coins needed to meet total
     """
+    if total <= 0:
+        return 0
+
     min_coins = 0
     sorted_coins = list(reversed(sorted(coins)))
     print(f'{sorted_coins=} {total=}')
     for coin in sorted_coins:
         while total >= coin:
-            print('new loop ===')
             min_coins += total // coin
             total = total % coin
             print(f'{total=}, {coin=}, total // coin = {total // coin}')
