@@ -21,13 +21,10 @@ def makeChange(coins, total):
 
     min_coins = 0
     sorted_coins = list(reversed(sorted(coins)))
-    print(f'{sorted_coins=} {total=}')
     for coin in sorted_coins:
         while total >= coin:
             min_coins += total // coin
             total = total % coin
-            print(f'{total=}, {coin=}, total // coin = {total // coin}')
-            time.sleep(1)
 
     if total != 0:  # not all coins could be divided
         return -1
